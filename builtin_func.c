@@ -7,7 +7,7 @@
  *
  *Return: -1 on sucessful and o else
  */
-int builtin_func(char **args, int i, int count)
+int builtin_func(char **args, int i, int count, char **argv)
 {
 int status;
 switch (i)
@@ -31,7 +31,7 @@ token_free(args);
 status = -1;
 break;
 case 4:
-status = my_exit(args, count);
+status = my_exit(args, count, argv);
 break;
 default:
 status = -1;

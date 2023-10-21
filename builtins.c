@@ -27,8 +27,8 @@ return (0);
 int my_exit(char **args, int count, char **argv)
 {
 int stat = get_status(), stat_non = get_status_non();
-int final_stat;
-char *arg_one;
+int final_stat, i;
+char *arg_one = args[1];
 if (arg_one == NULL)
 {
 if (stat == stat_non)
@@ -40,8 +40,7 @@ final_stat = stat;
 }
 else
 {
-arg_one = args[1];
-for (i = 0 ; arg_one[i] != NULL ; i++)
+for (i = 0 ; arg_one[i] != '\0' ; i++)
 {
 if (!(arg_one[i] >= '0' && arg_one[i] <= '9'))
 {
