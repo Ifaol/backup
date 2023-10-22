@@ -12,6 +12,9 @@ int new_process(char **args, char **argv, int count)
 pid_t pid;
 int status, state = 0;
 char *path = NULL;
+int command_check = command_check(args);
+if (comand_check == 1)
+return (var_rep(args));
 if (_strncmp(args[0], "./", 2) == 0)
 state = 1;
 if ((_strncmp(args[0], "/bin", 4) == 0) || state == 1)
