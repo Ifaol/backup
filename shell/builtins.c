@@ -8,12 +8,12 @@
  */
 int my_env(char **args)
 {
-int count = 0;
-while (environ[count] != NULL)
+char **env = environ;
+while (*env != NULL)
 {
-_puts(environ[count]);
+_puts(*env);
 _putchar('\n');
-count++;
+env++;
 }
 token_free(args);
 return (0);

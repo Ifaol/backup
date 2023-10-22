@@ -45,7 +45,7 @@ return (ret);
 }
 if (stat_ret == -1)
 {
-print_error2(argv, count, args), token_free(dir), token_free(args);
+print_error(argv, count, args), token_free(dir), token_free(args);
 return (NULL);
 }
 return (NULL);

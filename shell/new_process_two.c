@@ -17,7 +17,7 @@ if (pid == 0)
 {
 if (execve(path, args, environ) == -1)
 {
-print_error2(argv, count, args);
+print_error(argv, count, args);
 token_free(args);
 exit(127);
 }
