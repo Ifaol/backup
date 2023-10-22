@@ -13,7 +13,7 @@ pid_t pid;
 int status, state = 0;
 char *path = NULL;
 int command_check = command_check(args);
-if (comand_check == 1)
+if (comand_check != 0)
 return (var_rep(args));
 if (_strncmp(args[0], "./", 2) == 0)
 state = 1;
