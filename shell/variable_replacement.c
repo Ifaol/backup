@@ -33,7 +33,7 @@ return (3);
 }
 return (0);
 }
-int var_rep(args)
+int var_rep(char **args)
 {
 pid_t my_pid = getpid();
 int var_value = command_check(args);
@@ -43,10 +43,11 @@ int final_stat, i;
 if (var_value == 1)
 {
 printf("%d", my_pid);
+_putchar('\n');
 token_free(args);
 return (0);
 }
-else if (var_value == 2)
+else if (var_value == 3)
 {
 for (i = 0 ; env[i] != NULL ; i++)
 {
@@ -59,11 +60,12 @@ break;
 if (path != NULL)
 {
 _puts(path);
+_putchar('\n');
 }
 token_free(args);
 return (0);
 }
-else if (var_value == 3)
+else if (var_value == 2)
 {
 if (stat == stat_non)
 final_stat = stat;
@@ -74,6 +76,7 @@ else
 final_stat = stat;
 }
 printf("%d", final_stat);
+_putchar('\n');
 token_free(args);
 return (0);
 }
